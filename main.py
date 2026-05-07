@@ -14,6 +14,7 @@ app = FastAPI()
 # # below is a port or different application is allowed to call our api application only it is running on our local host
 origins = [
     "http://localhost:3000",
+    "https://vaishnavithunuguntla.github.io",
 ]
 
 app.add_middleware(
@@ -40,7 +41,7 @@ class TransactionModel(TransactionBase):
 
     class Config:
         # from_attributes = True   # ✅ Pydantic v2 fix
-        omr_mode=True
+        orm_mode=True
 
 # ---------------- Dependency ----------------
 # # below is the dependency injection for our application. we are trying a database connection here
